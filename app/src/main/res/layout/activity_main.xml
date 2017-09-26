@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="br.scapegoat.scapay.MainActivity">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        android:gravity="center_horizontal"
+        android:id="@+id/txtNomeLoja"
+        android:text="@string/vendedorPorFavorEscaneie"/>
+
+
+
+        <SurfaceView
+            android:id="@+id/cameraPreview"
+            android:layout_marginTop="10dp"
+            android:layout_width="250dp"
+            android:layout_centerHorizontal="true"
+            android:layout_height="250dp"
+            android:layout_below="@+id/txtNomeLoja"/>
+
+
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:id="@+id/listViewProdutos"
+        android:layout_below="@+id/cameraPreview"
+        android:layout_marginTop="10dp"
+        android:layout_above="@+id/buttonConfirmarPagamento">
+    </ListView>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Confirmar Pagamento"
+        android:onClick="mudaPage"
+        android:layout_marginTop="7dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/buttonConfirmarPagamento" />
+
+</RelativeLayout>

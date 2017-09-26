@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="br.scapegoat.scapay.CadastroVendedorActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/txtCabecalhoVendedor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:text="@string/vendedor" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="43dp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/txtNomeLoja"
+            android:gravity="center_vertical"
+            android:layout_below="@+id/txtCabecalhoVendedor"
+            android:text="@string/nomeLoja"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@+id/txtNomeLoja"
+            android:layout_height="wrap_content"
+            android:id="@+id/nomeLoja"
+            android:layout_below="@+id/txtCabecalhoVendedor"
+            android:hint="@string/nomeLojaExemplo"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="43dp"
+            android:layout_below="@+id/nomeLoja"
+            android:id="@+id/txtEmail"
+            android:gravity="center_vertical"
+            android:layout_marginTop="10dp"
+            android:text="@string/email"/>
+
+        <EditText
+            android:id="@+id/emailLoja"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@+id/txtEmail"
+            android:layout_below="@+id/nomeLoja"
+            android:inputType="textEmailAddress"
+            android:hint="@string/emailLojaExemplo"/>
+
+        <TextView
+            android:id="@+id/txtTelefone"
+            android:layout_width="wrap_content"
+            android:layout_below="@+id/emailLoja"
+            android:layout_marginTop="10dp"
+            android:layout_height="43dp"
+            android:gravity="center_vertical"
+            android:text="@string/telefone" />
+
+        <EditText
+            android:id="@+id/telefoneLoja"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/emailLoja"
+            android:layout_toEndOf="@+id/txtTelefone"
+            android:inputType="phone"
+            android:hint="@string/telefoneExemplo"/>
+
+        <TextView
+            android:id="@+id/txtCNPJ"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/telefoneLoja"
+            android:gravity="center_vertical"
+            android:layout_height="43dp"
+            android:text="@string/cNPJ" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/telefoneLoja"
+            android:layout_toEndOf="@+id/txtCNPJ"
+            android:layout_marginTop="10dp"
+            android:id="@+id/cnpjLoja"
+            android:hint="@string/cnpjExemplo"/>
+
+        <TextView
+            android:id="@+id/txtSenha"
+            android:layout_width="wrap_content"
+            android:layout_below="@+id/cnpjLoja"
+            android:gravity="center_vertical"
+            android:layout_marginTop="10dp"
+            android:layout_height="43dp"
+            android:text="@string/senha" />
+
+        <EditText
+            android:id="@+id/senhaLoja"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/txtSenha"
+            android:layout_below="@+id/cnpjLoja"
+            android:layout_marginTop="10dp"
+            android:inputType="textPassword"
+            android:hint="@string/senhaExemplo"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtContaPaypal"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:text="@string/contaPaypal"
+            android:layout_below="@+id/senhaLoja"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:id="@+id/txtLinkPaypalMe"
+            android:layout_width="wrap_content"
+            android:layout_height="43dp"
+            android:gravity="center_vertical"
+            android:layout_below="@+id/txtContaPaypal"
+            android:layout_marginTop="10dp"
+            android:text="@string/linkPaypalMe" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linkPaypalMe"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@+id/txtLinkPaypalMe"
+            android:hint="@string/linkPaypalMeExemplo"
+            android:layout_below="@+id/txtContaPaypal"/>
+
+        <TextView
+            android:id="@+id/linkAjudaPaypal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_below="@+id/linkPaypalMe"
+            android:gravity="center_horizontal"
+            android:onClick="linkAjudaPaypalMe"
+            android:text="@string/linkAjudaPaypalMe"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonCadastrarLoja"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/linkAjudaPaypal"
+            android:text="@string/cadastrar"
+            android:layout_marginBottom="10dp"
+            android:onClick="cadastraLoja"/>
+
+    </RelativeLayout>
+
+</ScrollView>

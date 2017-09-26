@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="br.scapegoat.scapay.CadastroCompradorActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:id="@+id/txtCabecalhoComprador"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:text="@string/comprador" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="43dp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/txtPrimeiroNome"
+            android:gravity="center_vertical"
+            android:layout_below="@+id/txtCabecalhoComprador"
+            android:text="@string/primeiroNome"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@+id/txtPrimeiroNome"
+            android:layout_height="wrap_content"
+            android:id="@+id/nomeComprador"
+            android:layout_below="@+id/txtCabecalhoComprador"
+            android:hint="@string/nomeExemplo"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="43dp"
+            android:layout_below="@+id/nomeComprador"
+            android:id="@+id/txtSobrenome"
+            android:gravity="center_vertical"
+            android:layout_marginTop="10dp"
+            android:text="@string/sobrenome"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_toEndOf="@+id/txtSobrenome"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:id="@+id/sobrenomeComprador"
+            android:layout_below="@+id/nomeComprador"
+            android:hint="@string/sobrenomeExemplo"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="43dp"
+            android:layout_below="@+id/sobrenomeComprador"
+            android:id="@+id/txtEmail"
+            android:gravity="center_vertical"
+            android:layout_marginTop="10dp"
+            android:text="@string/email"/>
+
+        <EditText
+            android:id="@+id/emailComprador"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@+id/txtEmail"
+            android:layout_below="@+id/sobrenomeComprador"
+            android:inputType="textEmailAddress"
+            android:hint="@string/emailExemplo"/>
+
+        <TextView
+            android:id="@+id/txtDataNascimento"
+            android:layout_width="wrap_content"
+            android:layout_height="43dp"
+            android:layout_below="@+id/emailComprador"
+            android:gravity="center_vertical"
+            android:layout_marginTop="10dp"
+            android:text="@string/dataNascimento" />
+
+        <EditText
+            android:id="@+id/dataNascimentoComprador"
+            android:layout_width="match_parent"
+            android:layout_toEndOf="@+id/txtDataNascimento"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/emailComprador"
+            android:inputType="date"
+            android:hint="@string/dataExemplo"/>
+
+        <TextView
+            android:id="@+id/txtTelefone"
+            android:layout_width="wrap_content"
+            android:layout_below="@+id/dataNascimentoComprador"
+            android:layout_marginTop="10dp"
+            android:layout_height="43dp"
+            android:gravity="center_vertical"
+            android:text="@string/telefone" />
+
+        <EditText
+            android:id="@+id/telefoneComprador"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/dataNascimentoComprador"
+            android:layout_toEndOf="@+id/txtTelefone"
+            android:inputType="phone"
+            android:hint="@string/telefoneExemplo"/>
+
+        <TextView
+            android:id="@+id/txtCPF"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/telefoneComprador"
+            android:gravity="center_vertical"
+            android:layout_height="43dp"
+            android:text="@string/cPF" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/telefoneComprador"
+            android:layout_toEndOf="@+id/txtCPF"
+            android:layout_marginTop="10dp"
+            android:id="@+id/cpfComprador"
+            android:hint="@string/cpfExemplo"/>
+
+        <TextView
+            android:id="@+id/txtSenha"
+            android:layout_width="wrap_content"
+            android:layout_below="@+id/cpfComprador"
+            android:gravity="center_vertical"
+            android:layout_marginTop="10dp"
+            android:layout_height="43dp"
+            android:text="@string/senha" />
+
+        <EditText
+            android:id="@+id/senhaComprador"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/txtSenha"
+            android:layout_below="@+id/cpfComprador"
+            android:layout_marginTop="10dp"
+            android:inputType="textPassword"
+            android:hint="@string/senhaExemplo"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtCartaoCredito"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:text="@string/cartaoCredito"
+            android:layout_below="@+id/senhaComprador"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:id="@+id/txtNomeCartao"
+            android:layout_width="wrap_content"
+            android:layout_height="43dp"
+            android:gravity="center_vertical"
+            android:layout_below="@+id/txtCartaoCredito"
+            android:layout_marginTop="10dp"
+            android:text="@string/nomeImpresso" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/nomeCartaoComprador"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@+id/txtNomeCartao"
+            android:hint="@string/nomeCartaoCreditoExemplo"
+            android:layout_below="@+id/txtCartaoCredito"/>
+
+        <TextView
+            android:id="@+id/txtNumeroCartao"
+            android:layout_width="wrap_content"
+            android:layout_height="43dp"
+            android:gravity="center_vertical"
+            android:layout_below="@+id/nomeCartaoComprador"
+            android:layout_marginTop="10dp"
+            android:text="@string/numeroCartaoCredito" />
+
+        <EditText
+            android:id="@+id/numeroCartaoComprador"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/nomeCartaoComprador"
+            android:layout_marginTop="10dp"
+            android:inputType="number"
+            android:layout_toEndOf="@+id/txtNumeroCartao"
+            android:hint="@string/numeroCartaoCreditoExemplo"/>
+
+        <TextView
+            android:id="@+id/txtDataVencimento"
+            android:layout_width="wrap_content"
+            android:gravity="center_vertical"
+            android:layout_height="43dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/numeroCartaoComprador"
+            android:text="@string/dataVencimento" />
+
+        <EditText
+            android:id="@+id/dataVencimentoCartaoComprador"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@+id/txtDataVencimento"
+            android:layout_below="@+id/numeroCartaoComprador"
+            android:inputType="date"
+            android:hint="@string/dataExemplo"/>
+
+        <TextView
+            android:id="@+id/txtCodigoSeguranca"
+            android:layout_width="wrap_content"
+            android:gravity="center_vertical"
+            android:layout_height="43dp"
+            android:layout_below="@id/dataVencimentoCartaoComprador"
+            android:layout_marginTop="10dp"
+            android:text="@string/codigoSeguranca" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@+id/txtCodigoSeguranca"
+            android:inputType="number"
+            android:layout_below="@+id/dataVencimentoCartaoComprador"
+            android:id="@+id/codigoCartaoComprador"
+            android:hint="@string/codigoSegurancaExemplo"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonCadastrarComprador"
+            android:text="@string/cadastrar"
+            android:layout_marginBottom="10dp"
+            android:layout_below="@+id/codigoCartaoComprador"
+            android:onClick="cadastrarComprador"
+            android:layout_marginTop="10dp" />
+    </RelativeLayout>
+
+</ScrollView>

@@ -6,6 +6,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.os.Handler;
 import android.os.Vibrator;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
@@ -15,8 +16,11 @@ import android.util.SparseArray;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.vision.CameraSource;
 import com.google.android.gms.vision.Detector;
@@ -24,6 +28,7 @@ import com.google.android.gms.vision.barcode.Barcode;
 import com.google.android.gms.vision.barcode.BarcodeDetector;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,7 +38,10 @@ public class MainActivity extends AppCompatActivity {
     BarcodeDetector barcodeDetector;
     CameraSource cameraSource;
     final int RequestCameraPermissionID = 1001;
-
+    private ListView listview;
+    ArrayAdapter<String> adapter;
+    ArrayList<String> listProdutos=new ArrayList<String>();
+    final Handler handler = new Handler();
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
@@ -59,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
         dialog.setContentView(R.layout.activity_confirmar_pagamento);
         dialog.setTitle("Confirmar Pagamento !");
         TextView text = (TextView) dialog.findViewById(R.id.txtNomeVendedor);
-        text.setText("Bar do seu Quincas");
+        text.setText("Você comprou do "+textResult.getText());
         Button dialogButton = (Button) dialog.findViewById(R.id.dialogButtonOK);
         // if button is clicked, close the custom dialog
         dialogButton.setOnClickListener(new View.OnClickListener() {
@@ -76,12 +84,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        //setListAdapter(adapter);
         cameraPreview = (SurfaceView) findViewById(R.id.cameraPreview);
         textResult = (TextView) findViewById(R.id.txtNomeLoja);
         barcodeDetector = new BarcodeDetector.Builder(this).setBarcodeFormats(Barcode.QR_CODE).build();
         cameraSource = new CameraSource.Builder(this, barcodeDetector).setRequestedPreviewSize(640, 480).build();
-
+        listview = (ListView) findViewById(R.id.listViewProdutos);
+        adapter=new ArrayAdapter<String>(MainActivity.this,android.R.layout.simple_list_item_1,listProdutos);
+        listview.setAdapter(adapter);
         cameraPreview.getHolder().addCallback(new SurfaceHolder.Callback() {
             @Override
             public void surfaceCreated(SurfaceHolder holder) {
@@ -123,8 +133,23 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void run() {
                             Vibrator vibrator = (Vibrator)getApplicationContext().getSystemService(Context.VIBRATOR_SERVICE);
-                            vibrator.vibrate(1000);
-                            textResult.setText(qrCodes.valueAt(0).displayValue);
+                            vibrator.vibrate(500);
+                            String aux = qrCodes.valueAt(0).displayValue;
+                            String[] separated = aux.split(":");
+                            if(separated[0].equalsIgnoreCase("V")){
+                                textResult.setText("Vendedor: "+separated[1]);
+                            }else if(separated[0].equalsIgnoreCase("P")){
+                                listProdutos.add("Produto: "+separated[1]+", SKU: "+separated[2]+", Preço: R$"+separated[3]);
+                                adapter.notifyDataSetChanged();
+                            }else{
+                                Toast.makeText(MainActivity.this, "Favor escaneie ou um vendedor ou um produto válido", Toast.LENGTH_LONG).show();
+                            }
+                            handler.postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    //Do something after 100ms
+                                }
+                            }, 1000);
                         }
                     });
                 }

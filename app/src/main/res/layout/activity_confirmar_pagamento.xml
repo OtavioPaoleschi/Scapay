@@ -18,6 +18,7 @@
         android:layout_height="wrap_content"
         android:text="Teste Confirmar Pagamento"
         android:id="@+id/txtNomeVendedor"
+        android:layout_marginTop="10dp"
         android:layout_below="@+id/txtTitulo"/>
 
     <Button
@@ -26,7 +27,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text=" Ok "
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="10dp"
         android:layout_marginRight="5dp"/>
 
 

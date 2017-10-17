@@ -108,7 +108,7 @@ public class LoginActivity extends AppCompatActivity {
         protected String doInBackground(String... params) {
 
             try {
-                URL url = new URL("http://localhost:50693/api/Comprador/" + params[0]);
+                URL url = new URL("http://localhost:50693/api/Comprador/5/" + params[0]);
                 HttpURLConnection connection = (HttpURLConnection) url.openConnection();
                 connection.setRequestMethod("GET");
                 connection.setRequestProperty("Accept","application/json");

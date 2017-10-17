@@ -3,48 +3,21 @@
 
     <item
         is-multidex="true"
-        jar="C:\Users\Otavio\.android\build-cache\19e9b8560c3f94bc9b30a91a9a51050b0f607489\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.1"
-        sha1="d4cf6227dd6a2ceff0f7dcf0c324380b7abf2c28">
-        <dex dex="C:\Users\Otavio\Desktop\scapay\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_c70f32d6321379cefe6c9128cf9cf7c2c662f274\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Otavio\.android\build-cache\cd3c3d6c2ec7b112ac3353e1292e00c903fd5f21\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.1"
-        sha1="95519720620b553f63afc789beba9ad582807f7c">
-        <dex dex="C:\Users\Otavio\Desktop\scapay\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_8371112e757b1ad14db5a10ab207c010eac93635\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Otavio\Desktop\scapay\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jar="C:\Users\Otavio\Documents\GitHub\Scapay\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="26.0.1"
-        sha1="c2a3285b59a98cb6e08165fa105b29ac9d81b18d">
-        <dex dex="C:\Users\Otavio\Desktop\scapay\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_8cdbdf2944f29207be6afa41701c78d20f60b85b\classes.dex" />
+        sha1="c31ca3ff6fd3875018b5ae58abe6a38a08e7c65e">
+        <dex dex="C:\Users\Otavio\Documents\GitHub\Scapay\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_542de3257ae81abf817889c9e3dc0bc181f735e3\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Otavio\.android\build-cache\6cc2c9c09e29b23680adb7cf6e144e772b4494d2\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.1"
-        sha1="38789e20ace9ab7dbd00554bd2673ab424478d3b">
-        <dex dex="C:\Users\Otavio\Desktop\scapay\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_53083e52b940f8c0f0b95908a38833f1bd0e0dd9\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Otavio\Desktop\scapay\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jar="C:\Users\Otavio\Documents\GitHub\Scapay\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="26.0.1"
         sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
-        <dex dex="C:\Users\Otavio\Desktop\scapay\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_b8b6d2e09892f17753058d799bdfc500f9636f9c\classes.dex" />
+        <dex dex="C:\Users\Otavio\Documents\GitHub\Scapay\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_4042daed0c07613942332393a4ef068a9009b07e\classes.dex" />
     </item>
 
 </items>

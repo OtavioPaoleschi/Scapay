@@ -2,7 +2,7 @@
     <string name="app_name">Scapay</string>
     <string name="textResultDefault">Por favor scaneie um QR code</string>
     <string name="login">Login</string>
-    <string name="userName">Nome de Usuario</string>
+    <string name="userName">Email do Usuario</string>
     <string name="passWord">Palavra Passe</string>
     <string name="cadastroVendedor">Quero ser vendedor!</string>
     <string name="cadastroComprador">Quero Comprar!</string>

@@ -73,11 +73,12 @@ public class MainActivity extends AppCompatActivity {
         TextView text = (TextView) dialog.findViewById(R.id.txtNomeVendedor);
         text.setText("Você comprou do "+textResult.getText());
         Button dialogButton = (Button) dialog.findViewById(R.id.dialogButtonOK);
-        // if button is clicked, close the custom dialog
         dialogButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 dialog.dismiss();
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
             }
         });
         dialog.show();

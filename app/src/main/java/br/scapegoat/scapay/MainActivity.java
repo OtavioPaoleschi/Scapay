@@ -42,6 +42,9 @@ public class MainActivity extends AppCompatActivity {
     ArrayAdapter<String> adapter;
     ArrayList<String> listProdutos=new ArrayList<String>();
     final Handler handler = new Handler();
+    double valortot = 0;
+    boolean aux1 = false;
+    boolean aux2 = false;
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
@@ -63,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void mudaPage(View arg0){
+        if(aux1&&aux2){
         final Dialog dialog = new Dialog(context);
         dialog.setContentView(R.layout.activity_confirmar_pagamento);
         dialog.setTitle("Confirmar Pagamento !");
@@ -76,8 +80,11 @@ public class MainActivity extends AppCompatActivity {
                 dialog.dismiss();
             }
         });
-
         dialog.show();
+        }else{
+            Toast.makeText(MainActivity.this, "Você precisa Escanear um vendedor e ao menos um produto para pagar!", Toast.LENGTH_LONG).show();
+        }
+        
     }
 
     @Override
@@ -140,6 +147,9 @@ public class MainActivity extends AppCompatActivity {
                                 textResult.setText("Vendedor: "+separated[1]);
                             }else if(separated[0].equalsIgnoreCase("P")){
                                 listProdutos.add("Produto: "+separated[1]+", SKU: "+separated[2]+", Preço: R$"+separated[3]);
+                                valortot = valortot + Double.parseDouble(separated[3]);
+                                Button botao = (Button) findViewById(R.id.buttonConfirmarPagamento);
+                                botao.setText("Confimar Pagamento R$"+valortot);
                                 adapter.notifyDataSetChanged();
                             }else{
                                 Toast.makeText(MainActivity.this, "Favor escaneie ou um vendedor ou um produto válido", Toast.LENGTH_LONG).show();

@@ -148,7 +148,9 @@ public class MainActivity extends AppCompatActivity {
                                     String[] separated = aux.split(":");
                                     if(separated[0].equalsIgnoreCase("V")){
                                         textResult.setText("Vendedor: "+separated[1]);
+                                        aux1=true;
                                     }else if(separated[0].equalsIgnoreCase("P")){
+                                        aux2=true;
                                         listProdutos.add("Produto: "+separated[1]+", SKU: "+separated[2]+", Preço: R$"+separated[3]);
                                         valortot = valortot + Double.parseDouble(separated[3]);
                                         Button botao = (Button) findViewById(R.id.buttonConfirmarPagamento);

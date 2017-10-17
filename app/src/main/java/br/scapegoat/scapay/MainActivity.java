@@ -135,34 +135,33 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void receiveDetections(Detector.Detections<Barcode> detections) {
                 final SparseArray<Barcode> qrCodes = detections.getDetectedItems();
-                if(qrCodes.size() != 0 ){
-                    textResult.post(new Runnable() {
-                        @Override
-                        public void run() {
-                            Vibrator vibrator = (Vibrator)getApplicationContext().getSystemService(Context.VIBRATOR_SERVICE);
-                            vibrator.vibrate(500);
-                            String aux = qrCodes.valueAt(0).displayValue;
-                            String[] separated = aux.split(":");
-                            if(separated[0].equalsIgnoreCase("V")){
-                                textResult.setText("Vendedor: "+separated[1]);
-                            }else if(separated[0].equalsIgnoreCase("P")){
-                                listProdutos.add("Produto: "+separated[1]+", SKU: "+separated[2]+", Preço: R$"+separated[3]);
-                                valortot = valortot + Double.parseDouble(separated[3]);
-                                Button botao = (Button) findViewById(R.id.buttonConfirmarPagamento);
-                                botao.setText("Confimar Pagamento R$"+valortot);
-                                adapter.notifyDataSetChanged();
-                            }else{
-                                Toast.makeText(MainActivity.this, "Favor escaneie ou um vendedor ou um produto válido", Toast.LENGTH_LONG).show();
-                            }
-                            handler.postDelayed(new Runnable() {
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        if(qrCodes.size() != 0 ){
+                            textResult.post(new Runnable() {
                                 @Override
                                 public void run() {
-                                    //Do something after 100ms
+                                    Vibrator vibrator = (Vibrator)getApplicationContext().getSystemService(Context.VIBRATOR_SERVICE);
+                                    vibrator.vibrate(500);
+                                    String aux = qrCodes.valueAt(0).displayValue;
+                                    String[] separated = aux.split(":");
+                                    if(separated[0].equalsIgnoreCase("V")){
+                                        textResult.setText("Vendedor: "+separated[1]);
+                                    }else if(separated[0].equalsIgnoreCase("P")){
+                                        listProdutos.add("Produto: "+separated[1]+", SKU: "+separated[2]+", Preço: R$"+separated[3]);
+                                        valortot = valortot + Double.parseDouble(separated[3]);
+                                        Button botao = (Button) findViewById(R.id.buttonConfirmarPagamento);
+                                        botao.setText("Confimar Pagamento R$"+valortot);
+                                        adapter.notifyDataSetChanged();
+                                    }else{
+                                        Toast.makeText(MainActivity.this, "Favor escaneie ou um vendedor ou um produto válido", Toast.LENGTH_LONG).show();
+                                    }
                                 }
-                            }, 1000);
+                            });
                         }
-                    });
-                }
+                    }
+                }, 1000);
             }
         });
     }

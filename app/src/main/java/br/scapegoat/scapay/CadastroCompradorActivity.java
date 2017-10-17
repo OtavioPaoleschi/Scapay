@@ -78,7 +78,7 @@ public class CadastroCompradorActivity extends AppCompatActivity {
         @Override
         protected Integer doInBackground(String... params) {
             try {
-                URL url = new URL("http://localhost:50693/api/Vendedor");
+                URL url = new URL("http://localhost:50693/api/Comprador");
                 HttpURLConnection connection = (HttpURLConnection) url.openConnection();
                 connection.setRequestMethod("POST");
                 connection.setRequestProperty("Content-Type","application/json");
